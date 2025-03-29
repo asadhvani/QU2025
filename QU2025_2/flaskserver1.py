@@ -1,8 +1,11 @@
 from flask import Flask, request, render_template
+import logging
 
 app=Flask(__name__)
 
 langchain_html="testing testing 123"
+
+logging.basicConfig(level=logging.DEBUG)
 
 @app.route("/")#Double check
 
@@ -15,6 +18,7 @@ def send_output():
 
 def get_data():
     data = request.form.get('data_input', 'No data received')
+    app.logger.debug(f"Received data: {data}")
     return data
 
 """
@@ -26,4 +30,4 @@ def get_data():
 """
 
 if __name__ == '__main__':
-    app.run(debug=True)
+    app.run(debug=True, port=5001)

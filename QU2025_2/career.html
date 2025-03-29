@@ -57,6 +57,26 @@
             window.onload = function() {
                 document.getElementById('career-out').innerHTML = "xyz";//Add langchain integration
             }
+            /*
+            document.getElementById("interest-form").addEventListener("submit", function(event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        let inputData = document.getElementById("career-choicef").value;
+
+        fetch("/submit_data", {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/x-www-form-urlencoded"
+            },
+            body: "data_input=" + encodeURIComponent(inputData)
+        })
+        .then(response => response.text()) // Get response as text
+        .then(data => {
+            document.getElementById("career-out").innerText = "Server Response: " + data;
+        })
+        .catch(error => console.error("Error:", error));
+    });
+             */
         </script>
     </head>
     <body>
@@ -73,10 +93,10 @@
             <!--<h3 id='career-choice-header'>What Are Your Current Interests?</h3>-->
             <div id='interest-form'>
                 <!--<span id='inthead'>What are your current interests?</span>-->
-                <form action="/submit_data" method="post">
+                <form action="/localhost:5001/submit_data" method="post"><!-- Set action path correctly each time-->
                     <label>What Are Your Current Interests?</label><br>
                     <input id='career-choicef' type='text' name='data_input'>
-                    <button id='submit-choice'>Submit</button>
+                    <button id='submit-choice' type="submit">Submit</button>
                 </form>
                 <!--<iframe src="output.html" id="outputFrame"></iframe>-->
                 <div id='career-out'>Output hasn't arrived yet</div>
