@@ -1,0 +1,84 @@
+<!doctype HTML>
+<html>
+    <head>
+        <title>Career</title>
+        <style>
+            body{
+                background-color: navy;
+            }
+            .tabs{
+                height: 80px;
+                position: relative;
+                border: 3px solid navy;
+                background-color: navy;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+            }
+            #home-button, #benefits-button, #career-button{
+                background-color: lightblue;
+                border: 3px solid blue;
+                height: 60px;
+                width: 140px;
+                margin-left: 25px;
+                margin-right: 25px;
+            }
+            #career-button{
+                border: 5px solid blue;
+            }
+            #career-choice{
+                text-align: center;
+                background-color: navy;
+                border: 3px solid navy;
+            }
+            #career-choice-header{
+                background-color: lightblue;
+            }
+            #career-choicef{
+                width: 200px;
+                height: 30px;
+            }
+            #interest-form{
+                background-color: lightblue;
+                height: 50px;
+            }
+            #career-choicef{
+                margin: 7.5px;
+            }
+            .subhead{
+                text-align: center;
+                background-color: lightblue;
+            }
+            #inthead{
+                text-align: left;
+            }
+        </style>
+        <script>
+            document.getElementById('career-out').innerHTML = "";//Add langchain integration
+        </script>
+    </head>
+    <body>
+        <div class='tabs'>
+            <a href='index.html'><button id='home-button'>Homepage</button></a>
+            <a href='benefits.html'><button id='benefits-button'>Benefits Page</button></a>
+            <a href='career.html'><button id='career-button'>Career Page</button></a>
+        </div>
+        <br>
+        <span id='subhead1'>
+            <h2 class='subhead'>Your Potential Computer Science Career</h2>
+        </span>
+        <div id='career-choice'>
+            <!--<h3 id='career-choice-header'>What Are Your Current Interests?</h3>-->
+            <div id='interest-form'>
+                <!--<span id='inthead'>What are your current interests?</span>-->
+                <form action="/submit_data" method="post">
+                    <label for="data_input">What Are Your Current Interests?</label><br>
+                    <input id='career-choicef' type='text'>
+                    <button id='submit-choice'>Submit</button>
+                </form>
+                <!--<iframe src="output.html" id="outputFrame"></iframe>-->
+                <div id='career-out'>Output hasn't arrived yet</div>
+            </div>
+        </div>
+    </body>
+</html>

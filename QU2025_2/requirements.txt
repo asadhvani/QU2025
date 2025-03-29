@@ -1,0 +1,11 @@
+openai
+torch
+numpy
+pandas
+langchain
+os
+getpass
+langchain-openai
+markdown
+flask
+subprocess
