@@ -14,13 +14,16 @@ def send_output():
 @app.route("/submit_data", methods=["POST"])
 
 def get_data():
+    data = request.form.get('data_input', 'No data received')
+    return data
+
+"""
+def get_data():
     if request.method == 'POST':
         data = request.form['data_input']
         # Process the data (e.g., save to a database, perform calculations)
         return data
-
-app.run(debug=True)
-
+"""
 
 if __name__ == '__main__':
     app.run(debug=True)
