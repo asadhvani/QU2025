@@ -54,7 +54,7 @@
             }
         </style>
         <script>
-            document.getElementById('career-out').innerHTML = "";//Add langchain integration
+            document.getElementById('career-out').innerHTML = "xyz";//Add langchain integration
         </script>
     </head>
     <body>
@@ -72,9 +72,9 @@
             <div id='interest-form'>
                 <!--<span id='inthead'>What are your current interests?</span>-->
                 <form action="/submit_data" method="post">
-                    <label for="data_input">What Are Your Current Interests?</label><br>
+                    <label>What Are Your Current Interests?</label><br>
                     <input id='career-choicef' type='text'>
-                    <button id='submit-choice'>Submit</button>
+                    <a href="career.html"><button id='submit-choice'>Submit</button></a>
                 </form>
                 <!--<iframe src="output.html" id="outputFrame"></iframe>-->
                 <div id='career-out'>Output hasn't arrived yet</div>
