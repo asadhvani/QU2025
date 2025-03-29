@@ -1,7 +1,12 @@
-window.onload = function() {
-    document.getElementById('career-out').innerHTML = "xyz";//Add langchain integration
-}
 
+//Uncomment Later When Servers are Tested
+
+//window.onload = function() {
+    //document.getElementById('career-out').innerHTML = "xyz";//Add langchain integration
+//}
+
+
+/*
 document.getElementById("interest-form").addEventListener("submit", function(event) {
     event.preventDefault(); // Prevent the default form submission
 
@@ -20,3 +25,4 @@ document.getElementById("interest-form").addEventListener("submit", function(eve
         })
         .catch(error => console.error("Error:", error));
     });
+ */
