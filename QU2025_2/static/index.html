@@ -1,31 +1,29 @@
 <!doctype HTML>
 <html>
     <head>
-        <title>Career</title>
-        <link rel="stylesheet" href="career_style.css">
-        <script src="career_script.js"></script>
+        <title>QU Competition 2025</title>
+        <link rel="stylesheet" href="index_style.css">
+        <script>
+            
+        </script>
     </head>
     <body>
+        <h1 id='title'>Why should I enter CS?</h1>
         <div class='tabs'>
             <a href='index.html'><button id='home-button'>Homepage</button></a>
             <a href='benefits.html'><button id='benefits-button'>Benefits Page</button></a>
             <a href='career.html'><button id='career-button'>Career Page</button></a>
         </div>
-        <br>
-        <span id='subhead1'>
-            <h2 class='subhead'>Your Potential Computer Science Career</h2>
-        </span>
         <div id='career-choice'>
             <!--<h3 id='career-choice-header'>What Are Your Current Interests?</h3>-->
             <div id='interest-form'>
                 <!--<span id='inthead'>What are your current interests?</span>-->
-                <form action="/localhost:5001/submit_data" method="post"><!-- Set action path correctly each time-->
+                <form action="/process/" method="post"><!-- Set action path correctly each time-->
                     <label>What Are Your Current Interests?</label><br>
                     <input id='career-choicef' type='text' name='data_input'>
                     <button id='submit-choice' type="submit">Submit</button>
                 </form>
                 <!--<iframe src="output.html" id="outputFrame"></iframe>-->
-                <div id='career-out'>Output hasn't arrived yet</div>
             </div>
         </div>
     </body>
