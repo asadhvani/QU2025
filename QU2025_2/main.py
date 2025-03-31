@@ -43,7 +43,7 @@ def serve_index(request: Request):
 def process_data(request: Request, text: str = Form(...)):
     print(text)
     processed_text1 = text.upper()  # Convert text to uppercase
-    return templates.TemplateResponse("submitted.html", {"request": request, "output": processed_text1})#Set to go to a your response has been sumitted page
+    return templates.TemplateResponse("submitted.html", {"request": request, "output": processed_text1})#Set to go to a your response has been submitted page
 
 @app.post("/output1")
 def process_data(request: Request, text: str = Form(...)):
@@ -75,7 +75,7 @@ def serve_page3(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
 """
-@app.get("/indexcss", response_class=HTMLResponse)
+@app.get("/index-css", response_class=HTMLResponse)
 def serve_page3(request: Request):
     return templates.TemplateResponse("/static/index_style.css", {"request": request})
 """
