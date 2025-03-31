@@ -26,8 +26,8 @@ from fastapi.templating import Jinja2Templates
 app = FastAPI()
 
 # Mount the static directory to serve pre-existing HTML files
-app.mount("/static", StaticFiles(directory="templates"), name="templates")
-
+#app.mount("/static", StaticFiles(directory="templates"), name="templates")
+app.mount("/static", StaticFiles(directory="static"), name="static")
 # Initialize Jinja2Templates to render HTML templates
 templates = Jinja2Templates(directory="templates")
 
@@ -45,14 +45,14 @@ def process_data(request: Request, text: str = Form(...)):
     processed_text1 = text.upper()  # Convert text to uppercase
     return templates.TemplateResponse("submitted.html", {"request": request, "output": processed_text1})#Set to go to a your response has been sumitted page
 
-@app.post("/output1/")
+@app.post("/output1")
 def process_data(request: Request, text: str = Form(...)):
     processed_text1 = text.upper()  # Convert text to uppercase
     return templates.TemplateResponse("output1.html", {"request": request, "output": processed_text1})
 
 
 # Serve second output page
-@app.get("/output2/", response_class=HTMLResponse)
+@app.get("/output2", response_class=HTMLResponse)
 def show_output2(request: Request, text: str):
     processed_text2 = text[::-1]  # Reverse text
     return templates.TemplateResponse("output2.html", {"request": request, "output": processed_text2})
@@ -74,5 +74,10 @@ def serve_page2(request: Request):
 def serve_page3(request: Request):
     return templates.TemplateResponse("index.html", {"request": request})
 
+"""
+@app.get("/indexcss", response_class=HTMLResponse)
+def serve_page3(request: Request):
+    return templates.TemplateResponse("/static/index_style.css", {"request": request})
+"""
 print("Running")
 
