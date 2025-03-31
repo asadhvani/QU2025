@@ -69,10 +69,10 @@ def serve_page2(request: Request):
     return templates.TemplateResponse("career.html", {"request": request})
 
 
-"""
+
 @app.get("/page3", response_class=HTMLResponse)
 def serve_page3(request: Request):
-    return templates.TemplateResponse("page3.html", {"request": request})
-"""
+    return templates.TemplateResponse("index.html", {"request": request})
+
 print("Running")
 
