@@ -26,10 +26,10 @@ from fastapi.templating import Jinja2Templates
 app = FastAPI()
 
 # Mount the static directory to serve pre-existing HTML files
-app.mount("/static", StaticFiles(directory="static"), name="static")
+app.mount("/static", StaticFiles(directory="templates"), name="templates")
 
 # Initialize Jinja2Templates to render HTML templates
-templates = Jinja2Templates(directory="static")
+templates = Jinja2Templates(directory="templates")
 
 
 # Serve the main input page
