@@ -41,6 +41,12 @@ def serve_index(request: Request):
 # Handle form submission and show first output
 @app.post("/process/")
 def process_data(request: Request, text: str = Form(...)):
+    print(text)
+    processed_text1 = text.upper()  # Convert text to uppercase
+    return templates.TemplateResponse("submitted.html", {"request": request, "output": processed_text1})#Set to go to a your response has been sumitted page
+
+@app.post("/output1/")
+def process_data(request: Request, text: str = Form(...)):
     processed_text1 = text.upper()  # Convert text to uppercase
     return templates.TemplateResponse("output1.html", {"request": request, "output": processed_text1})
 
@@ -68,4 +74,5 @@ def serve_page2(request: Request):
 def serve_page3(request: Request):
     return templates.TemplateResponse("page3.html", {"request": request})
 """
+print("Running")
 
