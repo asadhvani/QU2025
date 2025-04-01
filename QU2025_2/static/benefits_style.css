@@ -7,7 +7,7 @@ body{
     border: 3px solid navy;
     background-color: navy;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 #home-button, #benefits-button, #career-button{
@@ -20,4 +20,20 @@ body{
 }
 #benefits-button{
     border: 5px solid blue;
+}
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    flex-grow: 1;
+}
+#logo-container{
+    flex: 0;
+}
+#logo{
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
 }
