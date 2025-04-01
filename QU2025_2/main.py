@@ -28,6 +28,7 @@ app = FastAPI()
 # Mount the static directory to serve pre-existing HTML files
 #app.mount("/static", StaticFiles(directory="templates"), name="templates")
 app.mount("/static", StaticFiles(directory="static"), name="static")
+#app.mount("/Media", StaticFiles(directory="Media"), name="Media")
 # Initialize Jinja2Templates to render HTML templates
 templates = Jinja2Templates(directory="templates")
 
