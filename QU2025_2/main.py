@@ -22,6 +22,8 @@ from fastapi import FastAPI, Form, Request
 from fastapi.responses import HTMLResponse
 from fastapi.staticfiles import StaticFiles
 from fastapi.templating import Jinja2Templates
+import aimodel as ai
+
 stored_text="No input provided"
 app = FastAPI()
 
@@ -55,7 +57,12 @@ def process_data(request: Request, text: str = Form(...)):
     return templates.TemplateResponse("submitted.html", {"request": request, "output": text})  # Set to go to a your response has been submitted page
 @app.get("/output1", response_class=HTMLResponse)
 def show_output1(request: Request):
-    processed_text2 = stored_text.upper() if stored_text else "No input provided"
+    #processed_text2 = stored_text.upper() if stored_text else "No input provided"
+    if stored_text == "No input provided":
+        processed_text2 = "No input provided"
+    else:
+        processed_text2 = ai.get_benefits(ai.message_benefits(stored_text))
+        print("Benefts: "+processed_text2)
     return templates.TemplateResponse("output1.html", {"request": request, "output": processed_text2})
 
 """
@@ -69,7 +76,12 @@ def show_output2(request: Request, text: str):
 
 @app.get("/output2", response_class=HTMLResponse)
 def show_output2(request: Request):
-    processed_text2 = stored_text[::-1] if stored_text else "No input provided"
+    #processed_text2 = stored_text[::-1] if stored_text else "No input provided"
+    if stored_text == "No input provided":
+        processed_text2 = "No input provided"
+    else:
+        processed_text2 = ai.get_careers(ai.message_careers(stored_text))
+        print("Careers: "+processed_text2)
     return templates.TemplateResponse("output2.html", {"request": request, "output": processed_text2})
 
 # Serve the three additional pages
