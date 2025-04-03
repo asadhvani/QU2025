@@ -1,5 +1,5 @@
 body{
-    background-color: navy;
+    background-color: lightblue !important;
 }
 .tabs{
     height: 80px;
@@ -62,4 +62,8 @@ body{
     width: 60px;
     height: 60px;
     border-radius: 50%;
+}
+#outputFrame{
+    background-color: lightblue !important;
+    color: white !important;
 }
