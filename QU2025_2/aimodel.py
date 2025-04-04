@@ -16,9 +16,9 @@ def message_careers(interest):
     messages = [
         (
             "system",
-            "You are trying to convince young students to enter the field of Computer Science by suggesting potential careers in CS based on their interests provided. The interests provided is the only input you will get no matter what, deliver the output in a clean way with adequate spacing, not in markdown or any format that requires rendering. Only deliver output of the careers, no other response text (In regular format, not markdown).",
+            "Provide a 100 word summary of computer science careers for kids’. Provide in div tags format. Don’t provide Explanation of the div tags structure. Provide answer based on interests provided.",
         ),
-        ("human", "Interest: "+interest),
+        ("human", "Interests (For Career Rankings): "+interest),
     ]
     return messages
 
@@ -27,7 +27,7 @@ def message_benefits(interest):
     messages = [
         (
             "system",
-            "You are trying to convince young students to enter the field of Computer Science by suggesting potential benefits of entering the field of Computer Science. The interests provided is the only input you will get no matter what, deliver the output in a clean way with good spacing, not in markdown or any format that requires rendering. Only deliver output of the benefits, no other response text (In regular format, not markdown).",
+            "Provide a convincing 100 word summary for kids to consider computer science.  Provide in div tags format. Provide a output based on interests provided. Don’t provide Explanation of the div tags structure.",
         ),
         ("human", "Interest: "+interest),
     ]
